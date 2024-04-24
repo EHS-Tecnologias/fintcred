@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ClienteController;
 use App\Http\Controllers\UsuarioController;
 use Illuminate\Support\Facades\Route;
 
@@ -27,4 +28,5 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
     Route::get('/profile',[UsuarioController::class,'profile']);
+    Route::resource('/client',ClienteController::class)->names('cliente');
 });
