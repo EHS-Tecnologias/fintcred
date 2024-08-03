@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ClienteController;
+use App\Http\Controllers\RegionController;
 use App\Http\Controllers\UsuarioController;
 use Illuminate\Support\Facades\Route;
 
@@ -29,4 +30,6 @@ Route::middleware([
     })->name('dashboard');
     Route::get('/profile',[UsuarioController::class,'profile']);
     Route::resource('/client',ClienteController::class)->names('cliente');
+    Route::resource('/regiones',RegionController::class)->names('regiones');
+    
 });
